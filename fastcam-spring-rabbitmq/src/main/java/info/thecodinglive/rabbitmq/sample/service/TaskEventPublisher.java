@@ -1,18 +1,10 @@
 package info.thecodinglive.rabbitmq.sample.service;
 
-import info.thecodinglive.rabbitmq.config.FastcamRabbitQueue;
-import info.thecodinglive.rabbitmq.sender.RabbitMessageSender;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
-public class TaskEventPublisher extends RabbitMessageSender {
-    public TaskEventPublisher(RabbitTemplate rabbitTemplate) {
-        super(rabbitTemplate);
-    }
+public class TaskEventPublisher {
 
-    @Override
-    public void send(FastcamRabbitQueue queueName, Object data) {
-        super.send(queueName, data);
-    }
 }

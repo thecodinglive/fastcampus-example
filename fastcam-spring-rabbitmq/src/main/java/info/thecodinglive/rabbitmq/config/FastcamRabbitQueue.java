@@ -1,8 +1,10 @@
 package info.thecodinglive.rabbitmq.config;
 
 public enum FastcamRabbitQueue {
-    SAMPLE_TASK("fastcam.sample", 10000, 3),
-    EMPTY("fastcam.empty", 0, 0);
+    SAMPLE_TASK("photo.sample", 10000, 3),
+    READ("photo.read", 10000, 3),
+    WRITE("photo.write", 10000, 3),
+    EMPTY("photo.empty", 0, 0);
 
     private String queueName;
     private int retryDelayTimeMs;
@@ -31,3 +33,4 @@ public enum FastcamRabbitQueue {
         return FastcamRabbitQueue.EMPTY.equals(find(name));
     }
 }
+
