@@ -1,30 +1,12 @@
 package info.thecodinglive.rabbitmq.config;
 
-import com.rabbitmq.client.AMQP;
-import com.rabbitmq.client.Envelope;
 import info.thecodinglive.rabbitmq.sample.model.MyTask;
 import info.thecodinglive.utils.jackson.FastcamJacksonConverter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.core.*;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
-import org.springframework.amqp.rabbit.annotation.RabbitListenerConfigurer;
-import org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistrar;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
-import org.springframework.amqp.rabbit.listener.api.ChannelAwareMessageListener;
-import org.springframework.amqp.rabbit.support.MessagePropertiesConverter;
-import org.springframework.amqp.support.converter.MessagingMessageConverter;
-import org.springframework.boot.autoconfigure.amqp.RabbitProperties;
-import org.springframework.context.annotation.Configuration;
-
-import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import org.springframework.amqp.rabbit.annotation.EnableRabbit;
-import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
@@ -35,8 +17,15 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.boot.autoconfigure.amqp.RabbitProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.messaging.handler.annotation.support.DefaultMessageHandlerMethodFactory;
 
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
+
+/** docker 사용 시 check list
+ *   - vhost / 루트 패스
+ *   - 계정 admin 권한 ( tag )
+ */
 
 @Slf4j
 @Configuration
@@ -71,46 +60,39 @@ public class RabbitMQConfig {
         connectionFactory.setUsername(rabbitProperties.getUsername());
         connectionFactory.setPassword(rabbitProperties.getPassword());
         connectionFactory.setCacheMode(CachingConnectionFactory.CacheMode.CHANNEL);
+
         return connectionFactory;
     }
 
+    /**
+     * Admin 설정 관련 부분
+     * RabbitMQ에 admin 권한이 있는 계정으로 접속한 후에
+     * exchange와 queue를 등록하고 매핑해준다.
+     * @param rabbitConnectionFactory
+     * @return
+     */
     @Bean
     public RabbitAdmin rabbitAdmin(ConnectionFactory rabbitConnectionFactory) {
         final RabbitAdmin rabbitAdmin = new RabbitAdmin(rabbitConnectionFactory);
+
+        // exchange 등록
+        rabbitExchange(rabbitAdmin);
+        ///queue 자동 등록
+        for (FastcamRabbitQueue fastcamRabbitQueue : FastcamRabbitQueue.values()) {
+            rabbitAdmin.declareQueue(new Queue(fastcamRabbitQueue.getQueueName(), true));
+            rabbitAdmin.declareBinding(BindingBuilder.bind(new Queue(fastcamRabbitQueue.getQueueName(), true))
+                    .to(rabbitExchange(rabbitAdmin)).with(fastcamRabbitQueue.getQueueName()));
+        }
+
         rabbitAdmin.afterPropertiesSet();
         return rabbitAdmin;
     }
-
-    @Bean
-    List<Queue> rabbitQueues() {
-        List<Queue> rabbitQueues = new ArrayList<>();
-        QueueProperties queueProperties = new QueueProperties();
-
-        for (FastcamRabbitQueue fastcamRabbitQueue : FastcamRabbitQueue.values()) {
-            rabbitQueues.add(new Queue(fastcamRabbitQueue.getQueueName(), queueProperties.durable, queueProperties.exclusive, queueProperties.autoDelete));
-        }
-        return rabbitQueues;
-    }
-
-    private static class QueueProperties {
-        private boolean durable = true;
-        private boolean exclusive = false;
-        private boolean autoDelete = false;
-    }
-
 
     @Bean
     TopicExchange rabbitExchange(RabbitAdmin rabbitAdmin) {
         TopicExchange topicExchange = new TopicExchange(RABBIT_EXECHAGNGE_NAME);
         topicExchange.setAdminsThatShouldDeclare(rabbitAdmin);
         return topicExchange;
-    }
-
-    @Bean
-    List<Binding> bindings(List<Queue> rabbitQueues, TopicExchange rabbitExchange) {
-        return rabbitQueues.stream()
-                .map(rabbitQueue -> BindingBuilder.bind(rabbitQueue).to(rabbitExchange).with(rabbitQueue.getName()))
-                .collect(Collectors.toList());
     }
 
     @Bean
@@ -131,23 +113,4 @@ public class RabbitMQConfig {
 
         return rabbitTemplate;
     }
-
-    @Bean
-    public DefaultMessageHandlerMethodFactory myHandlerMethodFactory() {
-        DefaultMessageHandlerMethodFactory factory = new DefaultMessageHandlerMethodFactory();
-        return factory;
-    }
-
-
-    @Bean
-    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory() {
-        SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
-        factory.setConnectionFactory(rabbitConnectionFactory());
-        factory.setMessageConverter(rabbitMessageConverter());
-        factory.setConcurrentConsumers( CONSUMER_COUNT );
-        factory.setAutoStartup(Boolean.TRUE);
-
-        return factory;
-    }
-
 }
