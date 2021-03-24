@@ -1,0 +1,12 @@
+  #https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
+server.port: 8080
+spring:
+  application:
+    name: photoapp
+    jackson:
+      default-property-inclusion: non_null
+  servlet:
+        multipart.enabled: true
+
+photoapp.file:
+    defaultPath: c:\up-dir
