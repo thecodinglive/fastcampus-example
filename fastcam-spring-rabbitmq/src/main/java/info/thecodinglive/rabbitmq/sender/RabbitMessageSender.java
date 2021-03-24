@@ -16,6 +16,7 @@ public abstract class RabbitMessageSender {
 
     public void send(FastcamRabbitQueue queueName, Object data) {
         Assert.isNull(data, "message can't be null");
+
         Message msg = rabbitTemplate.getMessageConverter().toMessage(data, null);
         rabbitTemplate.send(String.valueOf(queueName), msg);
     }
