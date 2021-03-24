@@ -20,65 +20,43 @@ public class FastcamJacksonConverter {
                 .registerModule(new JavaTimeModule());
     }
 
-    private FastcamJacksonConverter() {}
+    private FastcamJacksonConverter() {
+        throw new RuntimeException("construct not support");
+    }
 
     public static ObjectMapper getInstance() {
         return mapper;
     }
 
     public static String toJson(Object value) {
-        String jsonString = "";
-
-        try {
-            if (value != null) {
-                jsonString = mapper.writeValueAsString(value);
-            }
+        try{
+            return mapper.writeValueAsString(value);
         } catch (Exception e) {
             throw new RuntimeException("convert error");
         }
-
-        return jsonString;
     }
 
-    @SuppressWarnings("unchecked")
     public static <T> T toObject(String content, Class<T> valueType) {
-        Object value = null;
-
         try {
-            if (content != null) {
-                value = mapper.readValue(content, valueType);
-            }
+            return mapper.readValue(content, valueType);
         } catch (Exception e) {
             throw new RuntimeException("convert error");
         }
-
-        return (T) value;
     }
 
     public static <T> T toObject(String content, TypeReference<T> type) {
-        T value = null;
-
         try {
-            if (content != null) {
-                value = mapper.readValue(content, type);
-
-            }
-
+            return mapper.readValue(content, type);
         } catch (Exception e) {
             throw new RuntimeException("convert error");
         }
-
-        return value;
     }
 
     public static <T> T convert(Object obj, Class<T> type) {
-        T value = null;
-
         try {
-            value = mapper.convertValue(obj, type);
+            return mapper.convertValue(obj, type);
         } catch (Exception e) {
            throw new RuntimeException("convert error");
         }
-        return value;
     }
 }
