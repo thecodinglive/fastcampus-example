@@ -9,7 +9,9 @@
 
 rootProject.name = "fastcampus-spring-cloud"
 
-include("fastcam-spring-eureka",
+include(
+        "fastcam-spring-utils",
+        "fastcam-spring-eureka",
         "fastcam-spring-apigw",
         "fastcam-photoapp",
         "fastcam-spring-rabbitmq",
