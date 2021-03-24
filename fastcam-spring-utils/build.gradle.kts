@@ -23,6 +23,7 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 dependencyManagement {
@@ -30,7 +31,6 @@ dependencyManagement {
 		mavenBom ("org.springframework.cloud:spring-cloud-dependencies:2020.0.1")
 	}
 }
-
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
