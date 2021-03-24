@@ -1,11 +1,13 @@
 package info.thecodinglive.rabbitmq.sample.model;
 
+import java.util.UUID;
+
 public class MyTask {
     private String taskId;
     private String msg;
 
-    public MyTask(String taskId, String msg) {
-        this.taskId = taskId;
+    public MyTask(String msg) {
+        this.taskId = UUID.randomUUID().toString();
         this.msg = msg;
     }
 
