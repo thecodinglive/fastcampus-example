@@ -7,7 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.4.30"
 }
 
-group = "info.thecodinglive.photoapp"
+group = "info.thecodinglive.stream"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -18,24 +18,19 @@ configurations {
 }
 
 repositories {
-	mavenCentral()
+	jcenter()
 }
 
 dependencies {
-	implementation(project(":fastcam-spring-utils"))
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("commons-fileupload:commons-fileupload:1.4")
-	implementation("io.springfox:springfox-swagger2:2.9.2")
-	implementation("io.springfox:springfox-swagger-ui:2.9.2")
-
-
-	compileOnly("org.projectlombok:lombok")
-	annotationProcessor("org.projectlombok:lombok")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
+
+dependencyManagement {
+	imports {
+		mavenBom ("org.springframework.cloud:spring-cloud-dependencies:2020.0.1")
+	}
+}
+
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
