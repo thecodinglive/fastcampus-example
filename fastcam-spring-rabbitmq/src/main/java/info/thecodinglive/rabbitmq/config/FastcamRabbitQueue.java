@@ -1,19 +1,15 @@
 package info.thecodinglive.rabbitmq.config;
 
 public enum FastcamRabbitQueue {
-    SAMPLE_TASK("photo.sample", 10000, 3),
-    READ("photo.read", 10000, 3),
-    WRITE("photo.write", 10000, 3),
-    EMPTY("photo.empty", 0, 0);
+    SAMPLE_TASK("photo.sample"),
+    READ("photo.read"),
+    WRITE("photo.write"),
+    EMPTY("photo.empty");
 
     private String queueName;
-    private int retryDelayTimeMs;
-    private int retryCount;
 
-    FastcamRabbitQueue(String queueName, int retryDelayTimeMs, int retryCount) {
+    FastcamRabbitQueue(String queueName) {
         this.queueName = queueName;
-        this.retryDelayTimeMs = retryDelayTimeMs;
-        this.retryCount = retryCount;
     }
 
     public String getQueueName() {
@@ -27,10 +23,6 @@ public enum FastcamRabbitQueue {
             }
         }
         return FastcamRabbitQueue.EMPTY;
-    }
-
-    public static boolean invalid(String name) {
-        return FastcamRabbitQueue.EMPTY.equals(find(name));
     }
 }
 
