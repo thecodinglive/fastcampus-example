@@ -22,8 +22,12 @@ repositories {
 }
 
 dependencies {
+	//implementation(project(":fastcam-spring-utils"))
+	implementation(project(":fastcam-spring-utils"))
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.kafka:spring-kafka:2.6.7")
+
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 dependencyManagement {
