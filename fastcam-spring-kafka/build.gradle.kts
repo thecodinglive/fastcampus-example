@@ -23,7 +23,7 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-amqp")
+	implementation("org.springframework.kafka:spring-kafka:2.6.7")
 }
 
 dependencyManagement {
