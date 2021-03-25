@@ -25,6 +25,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-amqp")
 	implementation("org.springframework.cloud:spring-cloud-starter-stream-rabbit")
+	implementation("org.springframework.cloud:spring-cloud-starter-stream-kafka")
 }
 
 dependencyManagement {
