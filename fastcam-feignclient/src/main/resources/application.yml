@@ -1,0 +1,11 @@
+  #https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html#_feign_logging
+feign:
+  cleint:
+    config:
+      default:
+        connectionTimeout: 1000
+        readTimeout: 3000
+        loggerLevel: FULL
+logging:
+  level:
+    info.thecodinglive.feignclient: debug
