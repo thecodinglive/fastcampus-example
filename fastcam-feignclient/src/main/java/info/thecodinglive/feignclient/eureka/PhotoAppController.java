@@ -18,7 +18,7 @@ public class PhotoAppController {
 
 
 
-    @FeignClient("photoapp")
+    @FeignClient("photoapp")  //도메인 정보
     interface PhotoClient {
         @GetMapping("/clients")
         String sayHello();

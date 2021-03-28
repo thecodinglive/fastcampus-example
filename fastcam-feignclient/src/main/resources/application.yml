@@ -10,7 +10,7 @@ logging:
   level:
     info.thecodinglive.feignclient: debug
 
-server.port: 8087
+server.port: 8095
 
 eureka:
   client:
