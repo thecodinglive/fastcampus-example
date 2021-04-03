@@ -30,12 +30,20 @@ dependencies {
 	implementation("commons-fileupload:commons-fileupload:1.4")
 	implementation("io.springfox:springfox-swagger2:2.9.2")
 	implementation("io.springfox:springfox-swagger-ui:2.9.2")
-
+	implementation ("org.springframework.cloud:spring-cloud-gcp-starter-storage")
 
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
+
+dependencyManagement {
+	imports {
+		mavenBom ("org.springframework.cloud:spring-cloud-gcp-dependencies:1.2.7.RELEASE")
+	}
+}
+
+
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
