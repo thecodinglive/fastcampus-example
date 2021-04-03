@@ -1,0 +1,2 @@
+spring.cloud.gcp:
+  storage.credentials.location: classpath:spherical-jetty-282315-4a9eedd9a9bc.json

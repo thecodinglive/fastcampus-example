@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":fastcam-resilience4j" external.linked.project.path="$MODULE_DIR$/../../../fastcam-resilience4j" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="info.thecodinglive.rabbitmq" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../fastcam-resilience4j">
+      <excludeFolder url="file://$MODULE_DIR$/../../../fastcam-resilience4j/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fastcam-resilience4j/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fastcam-resilience4j/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
