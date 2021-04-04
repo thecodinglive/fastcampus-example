@@ -1,0 +1,13 @@
+
+spring:
+  rabbitmq:
+    addresses: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    cache:
+      channel:
+        size: 10
+      connection:
+        size: 10
+      publisher-confirms: true

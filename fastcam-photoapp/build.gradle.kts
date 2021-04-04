@@ -31,6 +31,9 @@ dependencies {
 	implementation("io.springfox:springfox-swagger2:2.9.2")
 	implementation("io.springfox:springfox-swagger-ui:2.9.2")
 	implementation ("org.springframework.cloud:spring-cloud-gcp-starter-storage")
+	implementation("org.springframework.cloud:spring-cloud-config:3.0.1")
+	implementation("org.springframework.cloud:spring-cloud-context:3.0.1")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")

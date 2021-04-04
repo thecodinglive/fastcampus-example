@@ -10,3 +10,6 @@ spring:
 
 photoapp.file:
     defaultPath: c:\up-dir
+
+spring.cloud.config:
+    uri: http://localhost:8888
