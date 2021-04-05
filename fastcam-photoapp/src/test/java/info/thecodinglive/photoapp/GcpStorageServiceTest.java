@@ -22,7 +22,7 @@ public class GcpStorageServiceTest {
 
     @Test
     public void gcpUpload() {
-        gcpUploadService.uploadGcpStorage(bucketName, "ysj-test.jpg", filePath);
+        gcpUploadService.uploadGcpStorage(bucketName, "ysj-test3.jpg", filePath);
     }
 
     @Test
