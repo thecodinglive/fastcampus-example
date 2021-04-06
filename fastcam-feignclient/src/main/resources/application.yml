@@ -9,3 +9,16 @@ feign:
 logging:
   level:
     info.thecodinglive.feignclient: debug
+
+
+server.port: 8083
+
+spring.config.import:
+    configserver: http://127.0.0.1:8888
+spring.profiles.active: dev
+
+spring.cloud:
+  config.enabled: true
+  config.name: mongo
+          #import=configserver: http://localhost:8888
+          #fail-fast: true

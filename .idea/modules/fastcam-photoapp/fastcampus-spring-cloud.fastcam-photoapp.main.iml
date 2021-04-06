@@ -55,7 +55,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../fastcam-photoapp/src/main/resources" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.latencyutils:LatencyUtils:2.0.3" level="project" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.18" level="project" />
     <orderEntry type="module" module-name="fastcampus-spring-cloud.fastcam-spring-utils.main" />
@@ -159,5 +158,6 @@
     <orderEntry type="library" name="Gradle: org.threeten:threetenbp:1.4.4" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.2.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.13.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.latencyutils:LatencyUtils:2.0.3" level="project" />
   </component>
 </module>

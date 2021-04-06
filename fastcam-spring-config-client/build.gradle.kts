@@ -7,7 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.4.30"
 }
 
-group = "info.thecodinglive.rabbitmq"
+group = "info.thecodinglive.config"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -22,17 +22,11 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
 	implementation("org.springframework.cloud:spring-cloud-config-client")
-	implementation("org.springframework.cloud:spring-cloud-starter-bootstrap")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
-
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-
 }
 
 dependencyManagement {
