@@ -5,9 +5,5 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8081/eureka/
-
-management:
-  endpoints:
-  web:
-    exposure:
-      include: "*"
+        #healthcheck:
+      #enabled: true
