@@ -7,7 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.4.30"
 }
 
-group = "info.thecodinglive.spgw"
+group = "info.thecodinglive.stream"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -22,11 +22,10 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.cloud:spring-cloud-starter-gateway")
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation ("de.codecentric:spring-boot-admin-starter-server:2.4.0")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
-	compileOnly("org.projectlombok:lombok")
-	annotationProcessor("org.projectlombok:lombok")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -35,7 +34,6 @@ dependencyManagement {
 		mavenBom ("org.springframework.cloud:spring-cloud-dependencies:2020.0.1")
 	}
 }
-
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {

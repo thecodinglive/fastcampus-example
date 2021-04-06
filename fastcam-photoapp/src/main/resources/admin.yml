@@ -1,0 +1,15 @@
+spring.boot:
+  admin:
+    client:
+      instance:
+        health-url: http://localhost:8080/swagger-ui.html
+      #url: http://localhost:8091
+      auto-registration: true
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: "*"

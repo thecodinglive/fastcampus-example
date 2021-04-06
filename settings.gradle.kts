@@ -18,4 +18,6 @@ include(
         "fastcam-spring-kafka",
         "fastcam-spring-stream",
         "fastcam-resilience4j",
-        "fastcam-feignclient")
+        "fastcam-feignclient",
+        "fastcam-spring-admin"
+)

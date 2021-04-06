@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 //@EnableEurekaClient
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 @SpringBootApplication
 public class SpGwApp {
     public static void main(String ar[]) {
