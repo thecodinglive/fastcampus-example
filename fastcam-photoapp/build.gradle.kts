@@ -24,6 +24,7 @@ repositories {
 dependencies {
 	implementation(project(":fastcam-spring-utils"))
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -32,6 +33,7 @@ dependencies {
 	implementation("io.springfox:springfox-swagger-ui:2.9.2")
 
 	implementation ("org.springframework.cloud:spring-cloud-gcp-starter-storage")
+
 	implementation("org.springframework.cloud:spring-cloud-config:3.0.1")
 	implementation("org.springframework.cloud:spring-cloud-context:3.0.1")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -42,6 +44,7 @@ dependencies {
 
 	implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
 	implementation("org.springframework.cloud:spring-cloud-sleuth-zipkin")
+	implementation ("de.codecentric:spring-boot-admin-starter-client:2.4.0")
 
 
 	compileOnly("org.projectlombok:lombok")

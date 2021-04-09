@@ -3,18 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/fastcampus-spring-cloud.iml" filepath="$PROJECT_DIR$/.idea/fastcampus-spring-cloud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-feignclient/fastcampus-spring-cloud.fastcam-feignclient.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-feignclient/fastcampus-spring-cloud.fastcam-feignclient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-resilience4j/fastcampus-spring-cloud.fastcam-resilience4j.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-resilience4j/fastcampus-spring-cloud.fastcam-resilience4j.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-apigw/fastcampus-spring-cloud.fastcam-spring-apigw.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-apigw/fastcampus-spring-cloud.fastcam-spring-apigw.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-config-client/fastcampus-spring-cloud.fastcam-spring-config-client.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-config-client/fastcampus-spring-cloud.fastcam-spring-config-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-config-client/fastcampus-spring-cloud.fastcam-spring-config-client.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-config-client/fastcampus-spring-cloud.fastcam-spring-config-client.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-config-client/fastcampus-spring-cloud.fastcam-spring-config-client.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-config-client/fastcampus-spring-cloud.fastcam-spring-config-client.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-eureka/fastcampus-spring-cloud.fastcam-spring-eureka.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-eureka/fastcampus-spring-cloud.fastcam-spring-eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-kafka/fastcampus-spring-cloud.fastcam-spring-kafka.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-kafka/fastcampus-spring-cloud.fastcam-spring-kafka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-rabbitmq/fastcampus-spring-cloud.fastcam-spring-rabbitmq.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-rabbitmq/fastcampus-spring-cloud.fastcam-spring-rabbitmq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-sleuth/fastcampus-spring-cloud.fastcam-spring-sleuth.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-sleuth/fastcampus-spring-cloud.fastcam-spring-sleuth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-stream/fastcampus-spring-cloud.fastcam-spring-stream.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-stream/fastcampus-spring-cloud.fastcam-spring-stream.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fastcam-spring-utils/fastcampus-spring-cloud.fastcam-spring-utils.iml" filepath="$PROJECT_DIR$/.idea/modules/fastcam-spring-utils/fastcampus-spring-cloud.fastcam-spring-utils.iml" />
     </modules>
   </component>
 </project>
