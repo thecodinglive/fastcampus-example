@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: mysql
+
+spring.cloud.vault:
+  token: 67a57b2d-5741-496e-a8d6-eba59cfd25a8
+  scheme: http
+  kv.enabled: true
+
