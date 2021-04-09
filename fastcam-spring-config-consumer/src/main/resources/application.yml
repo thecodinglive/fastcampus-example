@@ -1,0 +1,6 @@
+server.port: 9090
+
+# config server property yml file name
+spring:
+  application:
+    name: mongo
