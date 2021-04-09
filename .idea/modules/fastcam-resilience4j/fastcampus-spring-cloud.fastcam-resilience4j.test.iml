@@ -117,5 +117,4 @@
     <orderEntry type="library" name="Gradle: io.github.resilience4j:resilience4j-bulkhead:1.6.1" level="project" />
     <orderEntry type="library" name="Gradle: io.github.resilience4j:resilience4j-timelimiter:1.6.1" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="fastcampus-spring-cloud.fastcam-resilience4j.main" />
 </module>
