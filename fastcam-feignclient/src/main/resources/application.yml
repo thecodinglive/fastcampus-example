@@ -11,4 +11,16 @@ logging:
   level:
     info.thecodinglive.feignclient: debug
 
+
 spring.application.name: fastCamFeign
+
+server.port: 8095
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
