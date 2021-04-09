@@ -12,9 +12,22 @@ logging:
     info.thecodinglive.feignclient: debug
 
 
+
+server.port: 8083
+
+spring.config.import:
+    configserver: http://127.0.0.1:8888
+spring.profiles.active: dev
+
+spring.cloud:
+  config.enabled: true
+  config.name: mongo
+          #import=configserver: http://localhost:8888
+          #fail-fast: true
+
 spring.application.name: fastCamFeign
 
-server.port: 8095
+
 
 eureka:
   client:
@@ -24,3 +37,4 @@ eureka:
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+

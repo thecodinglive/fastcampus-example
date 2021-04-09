@@ -1,0 +1,21 @@
+spring.cloud:
+  gateway:
+    httpclient:
+      connect-timeout: 500
+      response-timeout: 1000
+    routes:
+      - id: post-service
+        #dest
+        uri: http://localhost:8080
+        predicates:
+          - Path=/v1.0/contents/**
+      - id: time-service
+        uri: http://localhost:8080
+        predicates:
+          - Path=/v1.0/newservice
+          - After=2021-03-21T23:35:01.126+09:00[Asia/Seoul]
+      - id: header-service
+        uri: http://localhost:8080
+        predicates:
+          - Path=/v1.0/headservice
+          - Header=X-PHOTO-API-VERSION, 1.0.0

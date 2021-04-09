@@ -10,6 +10,7 @@
         </processorPath>
         <module name="fastcampus-spring-cloud.fastcam-photoapp.main" />
         <module name="fastcampus-spring-cloud.fastcam-spring-apigw.main" />
+        <module name="fastcampus-spring-cloud.fastcam-feignclient.main" />
         <module name="fastcampus-spring-cloud.fastcam-spring-sleuth.main" />
         <module name="fastcampus-spring-cloud.fastcam-spring-eureka.main" />
         <module name="fastcampus-spring-cloud.fastcam-spring-rabbitmq.main" />

@@ -1,0 +1,5 @@
+server.port: 7090
+spring.application:
+  name: hanbit-api-gw
+
+spring.config.import: api-gw.yml #,eureka-client.yml
