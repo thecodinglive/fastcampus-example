@@ -138,5 +138,4 @@
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.13.3" level="project" />
     <orderEntry type="library" name="Gradle: org.bouncycastle:bcprov-jdk15on:1.64" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="fastcampus-spring-cloud.fastcam-spring-sleuth.main" />
 </module>
