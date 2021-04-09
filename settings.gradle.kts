@@ -19,5 +19,6 @@ include(
         "fastcam-spring-stream",
         "fastcam-resilience4j",
         "fastcam-feignclient",
-        "fastcam-spring-config")
+        "fastcam-spring-config",
+        "fastcam-spring-config-client",
         "fastcam-spring-sleuth")
