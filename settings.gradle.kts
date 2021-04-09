@@ -21,4 +21,6 @@ include(
         "fastcam-feignclient",
         "fastcam-spring-config",
         "fastcam-spring-config-client",
-        "fastcam-spring-sleuth")
+        "fastcam-spring-sleuth",
+        "fastcam-spring-vault")
+
