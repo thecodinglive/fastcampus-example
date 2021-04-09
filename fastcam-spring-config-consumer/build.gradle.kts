@@ -25,6 +25,7 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-config-client")
 	implementation("org.springframework.cloud:spring-cloud-starter-bootstrap")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation("org.springframework.boot:spring-boot-starter-web")
 
 
 	compileOnly("org.projectlombok:lombok")

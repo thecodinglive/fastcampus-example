@@ -20,7 +20,7 @@ include(
         "fastcam-resilience4j",
         "fastcam-feignclient",
         "fastcam-spring-config",
-        "fastcam-spring-config-client",
+        "fastcam-spring-config-consumer",
         "fastcam-spring-admin",
         "fastcam-spring-sleuth",
         "fastcam-spring-vault")
