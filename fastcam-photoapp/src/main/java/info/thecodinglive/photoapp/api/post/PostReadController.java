@@ -21,4 +21,14 @@ public class PostReadController {
 
         return ResponseEntity.ok(content);
     }
+
+    @GetMapping("/v1.0/contents/2")
+    public ResponseEntity<?> throwTimeOut() {
+        try {
+            Thread.sleep(1000 * 30);
+        } catch (Exception e) {
+
+        }
+        return ResponseEntity.ok("timeout");
+    }
 }

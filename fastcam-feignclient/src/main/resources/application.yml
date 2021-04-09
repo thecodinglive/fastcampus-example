@@ -1,4 +1,5 @@
-  #https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html#_feign_logging
+#https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html#_feign_logging
+
 feign:
   cleint:
     config:
@@ -9,3 +10,5 @@ feign:
 logging:
   level:
     info.thecodinglive.feignclient: debug
+
+spring.application.name: fastCamFeign
