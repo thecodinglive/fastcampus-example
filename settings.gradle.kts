@@ -16,7 +16,6 @@ include(
         "fastcam-photoapp",
         "fastcam-spring-rabbitmq",
         "fastcam-spring-kafka",
-        "fastcam-spring-stream",
         "fastcam-resilience4j",
         "fastcam-resilience4j-server",
         "fastcam-feignclient",
