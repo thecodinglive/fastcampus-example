@@ -1,0 +1,43 @@
+server.port: 7075
+
+spring.server.name: fastcam-resilience4j
+spring.application.name: fastcam-resilience4j
+
+info:
+  name: ${spring.application.name}
+
+
+#resilience4j
+apiServer:
+  url: http://localhost:7072
+  maxConcurrent: 1
+  maxTimeout: 3
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+
+management.metrics:
+  tags:
+    server: ${spring.server.name}
+    application: ${spring.application.name}
+  distribution:
+    percentiles-histogram:
+      http.server.requests: true
+      resilience4j.circuitbreaker.calls: true
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      registerHealthIndicator: true
+
+      minimumNumberOfCalls: 3
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10s
+  instances:
+    myCircuitBreaker:
+      baseConfig: default

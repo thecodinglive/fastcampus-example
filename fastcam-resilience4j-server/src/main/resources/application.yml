@@ -1,0 +1,6 @@
+server.port: 7072
+
+
+logging:
+  level:
+    root: debug
