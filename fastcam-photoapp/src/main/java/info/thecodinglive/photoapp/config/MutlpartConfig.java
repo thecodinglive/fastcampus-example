@@ -27,12 +27,12 @@ public class MutlpartConfig {
         multipartResolver.setResolveLazily(true);
         multipartResolver.setMaxUploadSize(1024 * 1024 * 10);
         multipartResolver.setDefaultEncoding(StandardCharsets.UTF_8.displayName());
-        //try {
+        try {
             LOG.info("path:" + defaultPath);
-            //multipartResolver.setUploadTempDir(new FileSystemResource(defaultPath));
-       // } catch (IOException e) {
-         //  LOG.error("init error", e);
-        //}
+            multipartResolver.setUploadTempDir(new FileSystemResource(defaultPath));
+        } catch (IOException e) {
+           LOG.error("init error", e);
+        }
         return multipartResolver;
     }
 
