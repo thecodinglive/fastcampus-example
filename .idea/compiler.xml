@@ -12,6 +12,7 @@
         <module name="fastcampus-spring-cloud.fastcam-spring-eureka.main" />
         <module name="fastcampus-spring-cloud.fastcam-spring-rabbitmq.main" />
         <module name="fastcampus-spring-cloud.fastcam-photoapp.main" />
+        <module name="fastcampus-spring-cloud.fastcam-resilience4j.main" />
         <module name="fastcampus-spring-cloud.fastcam-spring-apigw.main" />
         <module name="fastcampus-spring-cloud.fastcam-spring-config-consumer.main" />
         <module name="fastcampus-spring-cloud.fastcam-feignclient.main" />

@@ -1,4 +1,4 @@
-package info.thecodinglive.cloud.app;
+package info.thecodinglive.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

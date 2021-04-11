@@ -129,5 +129,4 @@
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.13.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.latencyutils:LatencyUtils:2.0.3" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="fastcampus-spring-cloud.fastcam-spring-config.main" />
 </module>

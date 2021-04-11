@@ -1,6 +1,13 @@
-server.port: 9090
+server.port: 9093
 
 # config server property yml file name
-spring:
-  application:
-    name: mongo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ['refresh','beans','env']
+
+logging:
+  level:
+    org.springframework: TRACE
