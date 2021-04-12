@@ -7,7 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.4.30"
 }
 
-group = "info.thecodinglive.stream"
+group = "info.thecodinglive.config"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -22,10 +22,7 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-amqp")
-	implementation("org.springframework.cloud:spring-cloud-starter-stream-rabbit")
-	implementation("org.springframework.cloud:spring-cloud-starter-stream-kafka")
+	implementation("org.springframework.cloud:spring-cloud-config-server")
 }
 
 dependencyManagement {
